@@ -14,6 +14,6 @@ public class App {
 
        //lista.verificaCrescente();
 
-       System.out.println(lista.posicao(4));
+       System.out.println(lista.verificaOrdemCrescente());
     }
 }

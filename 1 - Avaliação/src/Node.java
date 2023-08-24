@@ -77,20 +77,17 @@ public class Node{
         }
     }
 
-	public int posicao(int pos){
-		int local = 0;
-
-		if(local == pos){
+	public int posicao(int pos, int valor){
+		if(valor == pos){
 			return x;
 		}
 
 		if(prox != null){
-			prox.posicao(pos);
+			return prox.posicao(pos+1,valor);
 		}
 
-		return -999;
+		throw new IllegalArgumentException("Posição inválida!");
 	}
-
 
 	public int somaPares(int pos){
 		int s = 0;
@@ -106,9 +103,15 @@ public class Node{
 		return s;
 	}
 
-	public void verificaOrdemCrescente(){
-		if(prox != null){
-
+	public boolean verificaOrdemCrescente(){
+		if(prox.getProx() == null){
+			return false;
 		}
+
+		if(x < prox.getProx().getX()){
+			return prox.verificaOrdemCrescente();
+		}
+
+		return true;
 	}
 }

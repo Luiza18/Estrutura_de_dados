@@ -27,7 +27,6 @@ public class Lista{
 		else{
 			return 0;
 		}
-		
 	}
 
     public boolean contrains(int valor){
@@ -39,7 +38,7 @@ public class Lista{
 
     public int somaPosImpares(){
         if(inicio != null){
-            return inicio.somaPosImpares(1);
+            return inicio.somaPosImpares(0);
         }
 
         return 999;
@@ -53,7 +52,7 @@ public class Lista{
 
 	public int somaPares(){
 		if(inicio != null){
-			return inicio.somaPares(1);
+			return inicio.somaPares(0);
 		}
 
 		return  -999;
@@ -61,10 +60,17 @@ public class Lista{
 
 	public int posicao(int valor){
 		if(inicio != null){
-			return inicio.posicao(valor);
+			return inicio.posicao(0,valor);
 		}
 
 		return -999;
 	}
 
+	public boolean verificaOrdemCrescente(){
+		if(inicio != null){
+			return inicio.verificaOrdemCrescente();
+		}
+
+		return false;
+	}
 }
