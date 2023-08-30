@@ -1,6 +1,7 @@
 public class App {
-    public static void main(String[] args) throws Exception {
-       Lista lista = new Lista();
+    public static void main(String[] args)throws Exception {
+       
+        Lista lista = new Lista();
 
        lista.add(1);
        lista.add(2);
@@ -14,6 +15,10 @@ public class App {
 
        //lista.verificaCrescente();
 
-       System.out.println(lista.verificaOrdemCrescente());
+       //lista.inverte();
+
+       //lista.getInvertida().show();
+
+       System.out.println(lista.menorValor(9));
     }
 }

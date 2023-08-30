@@ -1,8 +1,10 @@
 public class Lista{
 	private Node inicio;
+	private Lista invertida;
 	
 	public Lista(){
 		inicio = null;
+		invertida = new Lista();
 	}
 	
 	public void add(int valor){
@@ -12,6 +14,10 @@ public class Lista{
 		else{
 			inicio = new Node(valor);
 		}
+	}
+
+	public Lista getInvertida() {
+		return invertida;
 	}
 	
 	public void show(){
@@ -72,5 +78,19 @@ public class Lista{
 		}
 
 		return false;
+	}
+
+	public void inverte(){
+		if(inicio != null){
+			inicio.inverte(invertida);
+		}
+	}
+
+	public int menorValor(int valor){
+		if(inicio != null){
+			return inicio.menorValor(valor);
+		}
+
+		return -999;
 	}
 }

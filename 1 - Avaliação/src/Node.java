@@ -104,14 +104,38 @@ public class Node{
 	}
 
 	public boolean verificaOrdemCrescente(){
-		if(prox.getProx() == null){
-			return false;
+		if(prox == null){
+			return true;
 		}
 
-		if(x < prox.getProx().getX()){
+		if(x <=prox.getX()){
 			return prox.verificaOrdemCrescente();
 		}
 
-		return true;
+		return false;
 	}
+
+	public void inverte(Lista invertida){
+		if(prox != null){
+			prox.inverte(invertida);
+		}
+
+		invertida.add(x);
+	}
+
+	public int menorValor(int valor) {
+		int aux = Integer.MAX_VALUE; 
+	
+		if (x < valor) {
+			aux = x; 
+		}
+	
+		if (prox != null) {
+			int proximoMinimo = prox.menorValor(valor);
+			aux = Math.min(aux, proximoMinimo); 
+		}
+	
+		return aux;
+	}
+	
 }
